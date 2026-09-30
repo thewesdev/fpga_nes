@@ -8,7 +8,6 @@ set_global_assignment -name TOP_LEVEL_ENTITY nes
 
 set_global_assignment -name VERILOG_FILE src/nes.v
 
-set_location_assignment PIN_D12 -to CLOCK_27
+set_location_assignment PIN_D12 -to CLK_27
 
 project_close
-

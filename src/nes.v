@@ -1,6 +1,5 @@
 module nes (
-    input CLOCK_27
+    input CLK_27
 );
 
 endmodule
-
