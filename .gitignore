@@ -1,0 +1,12 @@
+# lixo gerado pelo quartus
+db
+incremental_db
+compile
+
+# quartus
+*.qpf
+*.qsf
+
+# simulação
+*.vvp
+*.vcd
