@@ -6,6 +6,15 @@ on:
     branches: [main]
     paths-ignore:
       - '**.md'
+      - '**.png'
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.svg'
+      - '**.gif'
+      - '**.webp'
+      - '**.mp4'
+      - '**.zip'
+      - '**.pdf'
       - 'LICENSE'
       - '.gitignore'
       - '.gitattributes'
@@ -14,6 +23,15 @@ on:
     branches: [main]
     paths-ignore:
       - '**.md'
+      - '**.png'
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.svg'
+      - '**.gif'
+      - '**.webp'
+      - '**.mp4'
+      - '**.zip'
+      - '**.pdf'
       - 'LICENSE'
       - '.gitignore'
       - '.gitattributes'
