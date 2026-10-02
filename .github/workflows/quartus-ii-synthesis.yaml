@@ -33,14 +33,14 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v2
 
       - name: Setup and Synthesis
         run: ./compile.sh
 
       - name: Upload artifacts
         if: always()
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v3
         with:
           name: artifacts.zip
           path: |
