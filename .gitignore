@@ -2,6 +2,9 @@
 db
 incremental_db
 compile
+logs
+
+*.log
 
 # quartus
 *.qpf
