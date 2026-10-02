@@ -33,9 +33,11 @@ essa versão pode ser encontrada para download [aqui](https://www.altera.com/dow
 
 ### pinos físicos utilizados
 
-| Pinos   | Nome do fio | Descrição             |
-| ------- | ----------- | --------------------- |
-| PIN_D12 | CLK_27      | Clock 27 MHz de input |
+| Pinos   | Nome do fio | Descrição                            |
+| ------- | ----------- | ------------------------------------ |
+| PIN_R20 | LED_RST     | led aceso quando rst está ativo      |
+| PIN_U22 | LED_RUNNING | led aceso quando rst está desativado |
+| PIN_D12 | CLK_27      | Clock 27 MHz de input                |
 
 ## como rodar
 
