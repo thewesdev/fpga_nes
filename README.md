@@ -50,7 +50,6 @@ essa versão pode ser encontrada para download [aqui](https://www.altera.com/dow
 > é necessário que em caso de uso do distrobox, seja permitido a ele enxergar as conexões USB e permissão de escrita no USB Blaster.
 
 ```bash
-quartus_sh -t setup.tcl
-quartus_sh --flow compile nes
-quartus_pgm -m jtag -o "p;compile/nes.sof"
+./compile.sh
+./flash.sh
 ```
