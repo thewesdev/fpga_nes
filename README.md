@@ -8,12 +8,42 @@ mais detalhes abaixo.
 
 - [x] mb8416a15sk (ram/vram) \[parcial\]
 - [x] rp2a03 (cpu) \[parcial\]
-- [ ] sn74ls139n (decoder)
+- [x] sn74ls139n (decoder)
 - [ ] ppu
 - [ ] apu
+- [ ] cartridge
+- [ ] mappers
 - [ ] controles
 - [ ] vga
 - [ ] rs-232 (talvez)
+
+### mappers
+
+- [ ] SxROM
+- [ ] TxROM
+- [ ] NROM
+- [ ] UxROM
+- [ ] CxROM
+- [ ] AxROM
+- [ ] ExROM
+- [ ] PxROM
+- [ ] FxROM
+- [ ] GxROM
+- [ ] TxSROM
+
+| Família | Placas listadas                                                                                                                  | Mapper iNES |
+| ------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| NROM    | HROM, NROM-128, NROM-256, RROM, SROM                                                                                             | 0           |
+| SxROM   | SAROM, SBROM, SCROM, SEROM, SFROM, SGROM, SHROM, SJROM, SKROM, SLROM, SL1ROM, SL2ROM, SL3ROM, SLRROM, SNROM, SOROM, SUROM, SXROM | 1           |
+| UxROM   | UNROM, UN1ROM, UOROM                                                                                                             | 2, 94       |
+| CxROM   | CNROM, CPROM                                                                                                                     | 3, 13       |
+| TxROM   | TEROM, TFROM, TGROM, TKROM, TLROM, TNROM, TQROM, TR1ROM, TSROM, TVROM                                                            | 4           |
+| ExROM   | EKROM, ELROM, ETROM, EWROM                                                                                                       | 5           |
+| AxROM   | AMROM, ANROM, AN1ROM, AOROM                                                                                                      | 7           |
+| PxROM   | PNROM, PEEOROM                                                                                                                   | 9           |
+| FxROM   | FJROM, FKROM                                                                                                                     | 10          |
+| TxSROM  | TKSROM, TLSROM                                                                                                                   | 118         |
+| GxROM   | GNROM, MHROM                                                                                                                     | 66          |
 
 ## fpga
 
@@ -34,11 +64,13 @@ essa versão pode ser encontrada para download [aqui](https://www.altera.com/dow
 
 ### pinos físicos utilizados
 
-| Pinos   | Nome do fio | Descrição                            |
-| ------- | ----------- | ------------------------------------ |
-| PIN_R20 | LED_RST     | led aceso quando rst está ativo      |
-| PIN_U22 | LED_RUNNING | led aceso quando rst está desativado |
-| PIN_D12 | CLK_27      | Clock 27 MHz de input                |
+| Pinos   | Nome do fio    | Descrição                                 |
+| ------- | -------------- | ----------------------------------------- |
+| PIN_R20 | LED_RST        | led aceso quando rst está ativo           |
+| PIN_U22 | LED_RUNNING    | led aceso quando rst está desativado      |
+| PIN_U21 | LED_MASTER_CLK | led acende conforme o master clock oscila |  |
+| PIN_V22 | LED_CPU_CLK    | led acende conforme o o cpu clock oscila  |
+| PIN_D12 | CLK_27         | Clock 27 MHz de input                     |
 
 ## como rodar
 
