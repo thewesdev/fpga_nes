@@ -32,7 +32,7 @@ select rd in "${testbench[@]}"; do
 		else
 			for tb_file in "${tb_files[@]}"; do
 				tb_name=$(basename "$tb_file" .v)
-				echo "exec $tb_name"
+				echo -e "\nexec $tb_name\n"
 				iverilog -g2012 -o "$d/$tb_name.vvp" "$tb_file" "src/$m_name.v"
 				vvp "$d/$tb_name.vvp"
 			done
@@ -40,6 +40,6 @@ select rd in "${testbench[@]}"; do
 
 		break
 	else
-		echo "opção inválida!"
+		echo -e "opção inválida!\n"
 	fi
 done
