@@ -11,6 +11,11 @@
 - Source: [ALTPLL IP Core User Guide](https://docs.altera.com/viewer/book-attachment/3WAlqOCwWjXrJ2AfjBRmtg/EruEOLiU8kP5iFfsbOlVmg-3WAlqOCwWjXrJ2AfjBRmtg)
 - Description: Guia do usuário para ALTPLL
 
+## 2A03 Technical Reference
+- Creator: [nesdev](https://nesdev.org)
+- Source: [2A03 Technical Reference](https://www.nesdev.org/2A03%20technical%20reference.txt)
+- Description: Referência técnica do RP2A03
+
 ## Nes Memory Map Overview
 - Creator: [javidx9](http://www.youtube.com/@javidx9)
 - Source: [NES Emulator Part #1: Bitwise Basics & Overview](https://youtu.be/F8kx56OZQhg?si=yS212hxrHIoQivDO&t=2253)
