@@ -18,7 +18,9 @@ on:
       - 'LICENSE'
       - '.gitignore'
       - '.gitattributes'
-      - 'flash.sh'
+      - 'scripts/flash.sh'
+      - 'scripts/test_one.sh'
+      - 'scripts/wave_view.sh'
   pull_request:
     branches: [main]
     paths-ignore:
@@ -35,7 +37,9 @@ on:
       - 'LICENSE'
       - '.gitignore'
       - '.gitattributes'
-      - 'flash.sh'
+      - 'scripts/flash.sh'
+      - 'scripts/test_one.sh'
+      - 'scripts/wave_view.sh'
 
 permissions:
   contents: read
@@ -45,7 +49,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Install Icarus Verilog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y iverilog
+
+      - name: Run testbenches
+        run: ./scripts/test_all.sh
+
   synthesis:
+    needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -58,7 +78,7 @@ jobs:
             -v "$GITHUB_WORKSPACE:/workspace" \
             -w /workspace \
             raetro/quartus:13.0sp1 \
-            bash ./compile.sh
+            bash ./scripts/compile.sh
 
       - name: Upload artifacts
         if: always()
