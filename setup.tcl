@@ -11,6 +11,7 @@ set_global_assignment -name VERILOG_FILE src/nes.v
 set_global_assignment -name VERILOG_FILE src/pll.v
 set_global_assignment -name VERILOG_FILE src/mb8416a15sk.v
 set_global_assignment -name VERILOG_FILE src/rp2a03.v
+set_global_assignment -name VERILOG_FILE src/sn74ls139n.v
 
 set_location_assignment PIN_R20 -to LED_RST
 set_location_assignment PIN_U22 -to LED_RUNNING
