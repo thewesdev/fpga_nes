@@ -6,6 +6,11 @@
 - Description: Manual do usuário da placa FPGA Altera DE1.
 - Local file: [DE1_UserManual_v1018](./DE1_UserManual_v1018.pdf)
 
+## NES Reference Guide
+- Creator [nesdev](https://nesdev.org)
+- Source: [Reference Guide](https://www.nesdev.org/wiki/NES_reference_guide?__cf_chl_tk=nJmfneWleR3xJO7aWpwDL5SjOhTJJL6sN9m4dq_EGaA-1790802048-1.0.1.1-r1N.789RhcGadeCHwM__bpSvKx2fSCtyc6KyfwjNkno)
+- Description: Guia de referência do nes.
+
 ## ALTPLL (Phase-Locked Loop) IP Core User Guide
 - Creator: [Altera](https://www.altera.com/)
 - Source: [ALTPLL IP Core User Guide](https://docs.altera.com/viewer/book-attachment/3WAlqOCwWjXrJ2AfjBRmtg/EruEOLiU8kP5iFfsbOlVmg-3WAlqOCwWjXrJ2AfjBRmtg)
