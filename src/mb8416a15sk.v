@@ -1,5 +1,5 @@
 module mb8416a15sk (
-    // input wire m_clk,
+    input wire m_clk,
     input wire phi2,
     input wire sel,
     input wire [10:0] addr_bus,
