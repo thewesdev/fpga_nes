@@ -6,9 +6,9 @@ mais detalhes abaixo.
 
 ## estado do projeto
 
-- [x] mb8416a15sk (parcial)
-- [x] rp2a03 (parcial)
-- [ ] sn74ls139n
+- [x] mb8416a15sk (ram/vram) \[parcial\]
+- [x] rp2a03 (cpu) \[parcial\]
+- [ ] sn74ls139n (decoder)
 - [ ] ppu
 - [ ] apu
 - [ ] controles
