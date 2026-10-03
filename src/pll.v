@@ -10,9 +10,9 @@ module pll (
     altpll #(
         .OPERATION_MODE("NORMAL"),
         .INTENDED_DEVICE_FAMILY("Cyclone II"),
-        .INCLK0_INPUT_FREQUENCY(27000),
-        .CLK0_MULTIPLY_BY(35),
-        .CLK0_DIVIDE_BY(44),
+        .INCLK0_INPUT_FREQUENCY(41667),
+        .CLK0_MULTIPLY_BY(17),
+        .CLK0_DIVIDE_BY(19),
         .COMPENSATE_CLOCK("CLK0"),
         .PORT_LOCKED("PORT_USED")
     ) pll (
