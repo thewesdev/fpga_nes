@@ -49,8 +49,8 @@ module tb_ram;
     end
 
     initial begin
-        $dumpfile("tb_mb8416a15sk.vcd");
-        $dumpvars(0, tb_mb8416a15sk);
+        $dumpfile("tb_ram.vcd");
+        $dumpvars(0, tb_ram);
 
         r_sel = 1'b1;
         r_rw = 1'b1;
@@ -60,7 +60,7 @@ module tb_ram;
         @(posedge r_phi2);
 
         // T1: Write
-        $display("[tb_mb8416a15sk] addr=0x0000 data=0x0010");
+        $display("[tb_ram] addr=0x0000 data=0x0010");
         r_sel = 1'b0;
         r_rw = 1'b0;
         r_mem_drive_data = 8'h10;
@@ -73,7 +73,7 @@ module tb_ram;
         #1;
 
         // T2: Read
-        $display("[tb_mb8416a15sk] addr: 0x0000");
+        $display("[tb_ram] addr: 0x0000");
 
         if (w_data_bus == 8'h10) begin
             $display("[sucesso] data_bus = %h", w_data_bus);
@@ -84,7 +84,7 @@ module tb_ram;
 
         r_sel = 1'b1;
 
-        $display("[tb_mb8416a15sk] fim");
+        $display("[tb_ram] fim");
         $finish;
     end
 endmodule
