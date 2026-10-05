@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_mb8416a15sk;
+module tb_ram;
     wire w_m_clk;
     wire w_phi2;
     wire w_sel;
@@ -23,7 +23,7 @@ module tb_mb8416a15sk;
     assign w_rw = r_rw;
     assign w_data_bus = !w_rw && !r_sel ? r_mem_drive_data : 8'hZZ;
 
-    mb8416a15sk ram (
+    ram wram (
         .m_clk(w_m_clk),
         .phi2(w_phi2),
         .sel(w_sel),
