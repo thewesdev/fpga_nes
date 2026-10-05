@@ -45,7 +45,6 @@ module nes (
         end
     end
 
-    wire w_phi2;
     wire [15:0] w_cpu_addr_bus;
     wire [7:0] w_cpu_data_bus;
     wire w_cpu_rw;
@@ -55,7 +54,6 @@ module nes (
         .rst(w_rst),
 
         .addr_bus(w_cpu_addr_bus),
-        .phi2(w_phi2),
         .rw(w_cpu_rw),
 
         .data_bus(w_cpu_data_bus)
@@ -93,7 +91,6 @@ module nes (
 
     ram wram (
         .m_clk(w_master_clk),
-        .phi2(w_phi2),
         .sel(w_sel_ram),
         .addr_bus(w_cpu_addr_bus),
         .data_bus(w_cpu_data_bus),
