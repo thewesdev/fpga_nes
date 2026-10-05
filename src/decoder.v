@@ -1,4 +1,4 @@
-module sn74ls139n (
+module decoder (
     input wire en,  // pull up
     input wire [1:0] s,
     output wire [3:0] y

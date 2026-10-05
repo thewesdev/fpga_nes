@@ -1,4 +1,4 @@
-module rp2a03 (
+module cpu (
     input wire m_clk,
     input wire rst,
     // input wire nmi,

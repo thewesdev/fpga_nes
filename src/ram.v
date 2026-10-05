@@ -1,4 +1,4 @@
-module mb8416a15sk (
+module ram (
     input wire m_clk,
     input wire phi2,
     input wire sel,
