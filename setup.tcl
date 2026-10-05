@@ -12,6 +12,7 @@ set_global_assignment -name VERILOG_FILE src/pll.v
 set_global_assignment -name VERILOG_FILE src/ram.v
 set_global_assignment -name VERILOG_FILE src/cpu.v
 set_global_assignment -name VERILOG_FILE src/decoder.v
+set_global_assignment -name VERILOG_FILE src/enable_pulse.v
 
 set_location_assignment PIN_R20 -to LED_RST
 set_location_assignment PIN_U22 -to LED_RUNNING
