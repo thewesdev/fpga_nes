@@ -3,8 +3,7 @@ module nes (
 
     output wire LED_RST,
     output wire LED_RUNNING,
-    output wire LED_MASTER_CLK,
-    output wire LED_CPU_CLK
+    output wire LED_MASTER_CLK
 );
     wire w_master_clk;
     wire w_locked_sync;
@@ -51,9 +50,7 @@ module nes (
     wire [7:0] w_cpu_data_bus;
     wire w_cpu_rw;
 
-    assign LED_CPU_CLK = w_phi2 && !w_rst;
-
-    rp2a03 cpu (
+    cpu cpu (
         .m_clk(w_master_clk),
         .rst(w_rst),
 
@@ -67,32 +64,34 @@ module nes (
     wire [3:0] w_y;
 
     wire w_sel_ram;
-    wire w_sel_ppu;
-    wire w_sel_apu_io;
-    wire w_sel_cartridge_ram;
-    wire w_sel_cartridge_rom0;
-    wire w_sel_cartridge_rom1;
-    wire w_sel_cartridge_rom2;
-    wire w_sel_cartridge_rom3;
+    // wire w_sel_ppu;
+    // wire w_sel_apu_io;
+    // wire w_sel_cartridge_ram;
+    // wire w_sel_cartridge_rom0;
+    // wire w_sel_cartridge_rom1;
+    // wire w_sel_cartridge_rom2;
+    // wire w_sel_cartridge_rom3;
+    // wire w_sel_bank0;
+    // wire w_sel_bank1;
 
     assign w_sel_ram = w_y[0] || w_cpu_addr_bus[15];
-    assign w_sel_ppu = w_y[1] || w_cpu_addr_bus[15];
-    assign w_sel_apu_io = w_y[2] || w_cpu_addr_bus[15];
-    assign w_sel_cartridge_ram = w_y[3] || w_cpu_addr_bus[15];
-    assign w_sel_cartridge_rom0 = w_y[0] || ~w_cpu_addr_bus[15];
-    assign w_sel_cartridge_rom1 = w_y[1] || ~w_cpu_addr_bus[15];
-    assign w_sel_cartridge_rom2 = w_y[2] || ~w_cpu_addr_bus[15];
-    assign w_sel_cartridge_rom3 = w_y[3] || ~w_cpu_addr_bus[15];
-    assign w_sel_bank0 = w_sel_cartridge_rom0 && w_sel_cartridge_rom1;
-    assign w_sel_bank1 = w_sel_cartridge_rom2 && w_sel_cartridge_rom3;
+    // assign w_sel_ppu = w_y[1] || w_cpu_addr_bus[15];
+    // assign w_sel_apu_io = w_y[2] || w_cpu_addr_bus[15];
+    // assign w_sel_cartridge_ram = w_y[3] || w_cpu_addr_bus[15];
+    // assign w_sel_cartridge_rom0 = w_y[0] || ~w_cpu_addr_bus[15];
+    // assign w_sel_cartridge_rom1 = w_y[1] || ~w_cpu_addr_bus[15];
+    // assign w_sel_cartridge_rom2 = w_y[2] || ~w_cpu_addr_bus[15];
+    // assign w_sel_cartridge_rom3 = w_y[3] || ~w_cpu_addr_bus[15];
+    // assign w_sel_bank0 = w_sel_cartridge_rom0 && w_sel_cartridge_rom1;
+    // assign w_sel_bank1 = w_sel_cartridge_rom2 && w_sel_cartridge_rom3;
 
-    sn74ls139n decoder (
+    decoder decoder (
         .en(1'b0),
         .s(w_cpu_addr_bus[14:13]),
         .y(w_y)
     );
 
-    mb8416a15sk wram (
+    ram wram (
         .m_clk(w_master_clk),
         .phi2(w_phi2),
         .sel(w_sel_ram),
