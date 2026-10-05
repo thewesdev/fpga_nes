@@ -9,7 +9,6 @@ module tb_ram;
     wire w_rw;
 
     reg r_m_clk;
-    reg r_phi2;
     reg r_sel;
     reg [10:0] r_addr_bus;
     reg [7:0] r_data_bus;
@@ -25,27 +24,16 @@ module tb_ram;
 
     ram wram (
         .m_clk(w_m_clk),
-        .phi2(w_phi2),
         .sel(w_sel),
         .addr_bus(w_addr_bus),
         .data_bus(w_data_bus),
         .rw(w_rw)
     );
 
-    reg [2:0] r_c = 3'b000;
-
     initial begin
         r_m_clk = 0;
-        r_phi2 = 0;
 
-        forever begin
-            #23.283 r_m_clk = !r_m_clk;
-
-            if (r_m_clk == 1'b1) begin
-                if (r_c == 5) r_phi2 = !r_phi2;
-                r_c = (r_c == 5) ? 3'b000 : r_c + 1'b1;
-            end
-        end
+        forever #23.283 r_m_clk = !r_m_clk;
     end
 
     initial begin
