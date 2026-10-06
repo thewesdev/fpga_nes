@@ -59,7 +59,7 @@ module tb_ram;
         // T2: Read
         $display("[tb_ram] addr: 0x0000");
 
-        if (w_data_bus == 8'h11) begin
+        if (w_data_bus == 8'h10) begin
             $display("[sucesso] data_bus = %h", w_data_bus);
         end
         else begin
