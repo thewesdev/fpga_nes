@@ -39,18 +39,18 @@ for rd in "${testbench[@]}"; do
 			tb_name=$(basename "$tb_file" .v)
 			echo -e "\nexec $tb_name\n"
 
-			if ! iverilog -g2012 -o "$d/$tb_name.vvp" "$tb_file" "src/$m_name.v"; then
+			if ! iverilog -g2012 -o "$d/$tb_name.vvp" "$tb_file" "src/enable_pulse.v" "src/$m_name.v"; then
 				echo "\nFAIL: compilação de $tb_name\n"
 				failed=1
 				failed_count=$((failed_count + 1))
 				continue
 			fi
 
-			if vvp "$d/$tb_name.vvp"; then
+			if (cd "$d" && vvp "$tb_name.vvp"); then
 				echo -e "\nPASS: $tb_name\n"
 				pass_count=$((pass_count + 1))
 			else
-				echo "\nFAIL: simulação de $tb_name\n"
+				echo -e "\nFAIL: simulação de $tb_name\n"
 				failed=1
 				failed_count=$((failed_count + 1))
 			fi
