@@ -36,7 +36,7 @@ select rd in "${testbench[@]}"; do
 			select tb_f in "${tb_names[@]}"; do
 				if [ -n "$tb_f" ]; then
 					tb_name=$(basename "$tb_f" .v)
-					iverilog -g2012 -o "$d/$tb_name.vvp" "$d/$tb_f" "src/$m_name.v"
+					iverilog -g2012 -o "$d/$tb_name.vvp" "$d/$tb_f" "src/enable_pulse.v" "src/$m_name.v"
 					(cd "$d" && vvp "$tb_name.vvp" > /dev/null)
 					gtkwave "$d/$tb_name.vcd" > /dev/null 2>&1
 					break
@@ -51,6 +51,3 @@ select rd in "${testbench[@]}"; do
 		echo "opção inválida!"
 	fi
 done
-
-#./test.sh
-#gtkwave tb.vcd
