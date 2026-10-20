@@ -56,12 +56,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v7
 
+      - name: Check Testbenchs
+        id: check_testbenchs
+        run: |
+          if ./scripts/check_testbenchs.sh; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+            echo "Nenhum testbench enconstrado"
+          fi
+
       - name: Install Icarus Verilog
+        if: steps.check_testbenchs.outputs.found == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y iverilog
 
       - name: Run testbenches
+        if: steps.check_testbenchs.outputs.found == 'true'
         run: ./scripts/test_all.sh
 
   synthesis:
