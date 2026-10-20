@@ -25,6 +25,9 @@ set_location_assignment PIN_U21 -to LED_MASTER_CLK
 
 set_location_assignment PIN_A12 -to CLK_24
 
+set_location_assignment PIN_F14 -to UART_RXD
+set_location_assignment PIN_G12 -to UART_TXD
+
 set_location_assignment PIN_AA10 -to SRAM_WE_N
 set_location_assignment PIN_T8 -to SRAM_OE_N
 set_location_assignment PIN_AB5 -to SRAM_CE_N
