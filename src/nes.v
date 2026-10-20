@@ -89,11 +89,25 @@ module nes (
         .y(w_y)
     );
 
-    ram wram (
-        .m_clk(w_master_clk),
-        .sel(w_sel_ram),
-        .addr_bus(w_cpu_addr_bus),
-        .data_bus(w_cpu_data_bus),
-        .rw(w_cpu_rw)
+    sram mem (
+        .rw(w_cpu_rw),
+        .addr(w_cpu_addr_bus),
+        .idata(w_cpu_addr_bus),
+        .odata(),
+        .SRAM_ADDR(SRAM_ADDR),
+        .SRAM_DATA(SRAM_DATA),
+        .SRAM_CE(SRAM_CE),
+        .SRAM_LB(SRAM_LB),
+        .SRAM_UB(SRAM_UB),
+        .SRAM_WE(SRAM_WE),
+        .SRAM_OE(SRAM_OE)
     );
+
+    // ram wram (
+        // .m_clk(w_master_clk),
+        // .sel(w_sel_ram),
+        // .addr_bus(w_cpu_addr_bus),
+        // .data_bus(w_cpu_data_bus),
+        // .rw(w_cpu_rw)
+    // );
 endmodule
