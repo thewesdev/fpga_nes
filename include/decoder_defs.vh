@@ -1,0 +1,15 @@
+`ifndef DECODER_DEFS_VH
+`define DECODER_DEFS_VH
+
+localparam integer SelRam = 4'd0;
+localparam integer SelPpu = 4'd1;
+localparam integer SelApuIo = 4'd2;
+localparam integer SelCartrigdeRam = 4'd3;
+localparam integer SelCartridgeRom0 = 4'd4;
+localparam integer SelCartridgeRom1 = 4'd5;
+localparam integer SelCartridgeRom2 = 4'd6;
+localparam integer SelCartridgeRom3 = 4'd7;
+localparam integer SelBank0 = 4'd8;
+localparam integer SelBank1 = 4'd9;
+
+`endif

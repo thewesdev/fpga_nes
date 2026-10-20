@@ -1,19 +1,25 @@
 module decoder (
-    input wire en,  // pull up
-    input wire [1:0] s,
-    output wire [3:0] y
+    input cpu_addr_msb,
+    output [9:0] sel
 );
-    reg [3:0] r_y;
+    `include "decoder_defs.vh"
 
-    assign y = r_y;
+    wire [3:0] w_y;
 
-    always @(*) begin
-        case (s)
-            2'b00: r_y = en ? 4'b1111 : 4'b1110;
-            2'b01: r_y = en ? 4'b1111 : 4'b1101;
-            2'b10: r_y = en ? 4'b1111 : 4'b1011;
-            2'b11: r_y = en ? 4'b1111 : 4'b0111;
-            default: r_y = en ? 4'b1111 : 4'b0000;
-        endcase
-    end
+    nes_decoder nes_decoder (
+        .en(1'b0),
+        .s(cpu_addr_bus[14:13]),
+        .y(w_y)
+    );
+
+    assign sel[SelRam] = w_y[0] || cpu_addr_msb;
+    assign sel[SelPpu] = w_y[1] || cpu_addr_msb;
+    assign sel[SelApuIo] = w_y[2] || cpu_addr_msb;
+    assign sel[SelCartrigdeRam] = w_y[3] || cpu_addr_msb;
+    assign sel[SelCartridgeRom0] = w_y[0] || ~cpu_addr_msb;
+    assign sel[SelCartridgeRom1] = w_y[1] || ~cpu_addr_msb;
+    assign sel[SelCartridgeRom2] = w_y[2] || ~cpu_addr_msb;
+    assign sel[SelCartridgeRom3] = w_y[3] || ~cpu_addr_msb;
+    assign sel[SelBank0] = w_sel_cartridge_rom0 && sel_cartridge_rom1;
+    assign w_sel_bank1 = w_sel_cartridge_rom2 && sel_cartridge_rom3;
 endmodule
