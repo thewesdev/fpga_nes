@@ -28,8 +28,8 @@ set_location_assignment PIN_A12 -to CLK_24
 set_location_assignment PIN_AA10 -to SRAM_WE_N
 set_location_assignment PIN_T8 -to SRAM_OE_N
 set_location_assignment PIN_AB5 -to SRAM_CE_N
-set_location_assignment PIN_Y7 -to SRAM_LB_N
-set_location_assignment PIN_W7 -to SRAM_WE_N
+set_location_assignment PIN_Y7 -to SRAM_UB_N
+set_location_assignment PIN_W7 -to SRAM_LB_N
 
 set sram_addr_pins {
 	PIN_AA3 PIN_AB3 PIN_AA4 PIN_AB4 PIN_AB5 PIN_AB10 PIN_AA11 PIN_AB11 PIN_V11
