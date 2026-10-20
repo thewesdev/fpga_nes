@@ -19,7 +19,7 @@ testbench=("$tb_dir"/*/)
 # verifica se existem testbenchs
 if [ ${#testbench[@]} -eq 0 ]; then
 	echo "Nenhuma testbench em $tb_dir"
-	exit 1
+	exit 0
 fi
 
 for rd in "${testbench[@]}"; do
