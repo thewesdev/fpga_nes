@@ -14,5 +14,5 @@ testbench=("$tb_dir"/*/)
 
 if [ ${#testbench[@]} -eq 0 ]; then
 	echo "Nenhuma testbench em $tb_dir"
-	exit 0
+	exit 1
 fi
