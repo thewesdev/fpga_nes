@@ -1,6 +1,6 @@
 module decoder (
-    input cpu_addr_msb,
-    output [9:0] sel
+    input [3:0] s,
+    output [9:0] y
 );
     `include "decoder_defs.vh"
 
@@ -21,5 +21,5 @@ module decoder (
     assign sel[SelCartridgeRom2] = w_y[2] || ~cpu_addr_msb;
     assign sel[SelCartridgeRom3] = w_y[3] || ~cpu_addr_msb;
     assign sel[SelBank0] = w_sel_cartridge_rom0 && sel_cartridge_rom1;
-    assign w_sel_bank1 = w_sel_cartridge_rom2 && sel_cartridge_rom3;
+    assign sel[SelBank1] = w_sel_cartridge_rom2 && sel_cartridge_rom3;
 endmodule

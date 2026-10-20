@@ -49,10 +49,10 @@ module nes (
         .data_bus(w_cpu_data_bus)
     );
 
-    wire [9:0] w_sel;
+    wire [9:0] w_y;
 
     decoder decoder (
-        .cpu_addr_msb(w_cpu_addr_bus[15]),
-        .sel(w_sel)
+        .s(w_cpu_addr_bus[15:13]),
+        .y(w_y)
     );
 endmodule
