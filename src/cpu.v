@@ -26,10 +26,10 @@ module cpu (
     assign addr_bus = r_addr_bus;
     assign rw = r_rw;
 
-    enable_pulse phi2_pulse (
-        .clk(m_clk),
-        .enable(w_phi2_pulse)
-    );
+    // enable_pulse phi2_pulse (
+    // .clk(m_clk),
+    // .enable(w_phi2_pulse)
+    // );
 
     always @(posedge m_clk) begin
         if (rst && w_phi2_pulse) begin  // reset
