@@ -3,7 +3,15 @@ module nes (
 
     output wire LED_RST,
     output wire LED_RUNNING,
-    output wire LED_MASTER_CLK
+    output wire LED_MASTER_CLK,
+
+    output wire [17:0] SRAM_ADDR,
+    inout wire [15:0] SRAM_DQ,
+    output wire SRAM_WE_N,
+    output wire SRAM_OE_N,
+    output wire SRAM_CE_N,
+    output wire SRAM_LB_N,
+    output wire SRAM_UB_N
 );
     `include "decoder_defs.vh"
 
